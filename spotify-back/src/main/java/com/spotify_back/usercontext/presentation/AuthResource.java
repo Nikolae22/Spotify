@@ -44,7 +44,7 @@ public class AuthResource {
         String issueUri = registration.getProviderDetails().getIssuerUri();
         String originUrl = request.getHeader(HttpHeaders.ORIGIN);
         Object[] params = {issueUri, registration.getClientId(), originUrl};
-        String logoutUrl = MessageFormat.format("{0}v2/logout/clientId={1}&returnTo={2}", params);
+        String logoutUrl = MessageFormat.format("{0}v2/logout?client_id={1}&returnTo={2}", params);
         request.getSession().invalidate();
         return ResponseEntity.ok().body(Map.of("logoutUrl", logoutUrl));
 

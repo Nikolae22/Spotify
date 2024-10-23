@@ -1,9 +1,0 @@
-services:
-  postgres:
-    image: 'postgres:latest'
-    environment:
-      - 'POSTGRES_DB=spotify'
-      - 'POSTGRES_PASSWORD=letmein'
-      - 'POSTGRES_USER=user'
-    ports:
-      - '5432'
